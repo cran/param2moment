@@ -6,9 +6,11 @@
 #' Moments of \href{https://en.wikipedia.org/wiki/Normal_distribution}{normal distribution}, parameter nomenclature follows
 #' \link[stats]{dnorm} function.
 #' 
-#' @param mean,sd \link[base]{numeric} scalars or \link[base]{vector}s, 
-#' mean and standard deviation of
-#' normal distribution.
+#' @param mean \link[base]{numeric} scalar or \link[base]{vector}, 
+#' mean parameter \eqn{\mu}
+#' 
+#' @param sd \link[base]{numeric} scalar or \link[base]{vector}, 
+#' standard deviation \eqn{\sigma}
 #' 
 #' @returns
 #' Function [moment_norm] returns a \linkS4class{moment} object.

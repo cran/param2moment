@@ -7,7 +7,7 @@
 \S4method{show}{moment}(object)
 }
 \arguments{
-\item{object}{\linkS4class{moment}}
+\item{object}{a \linkS4class{moment} object}
 }
 \value{
 The \link[methods]{show} method for \linkS4class{moment} object

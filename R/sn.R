@@ -6,8 +6,14 @@
 #' Moments of \href{https://en.wikipedia.org/wiki/Skew_normal_distribution}{skew-normal distribution}, parameter nomenclature follows
 #' \link[sn]{dsn} function.
 #' 
-#' @param xi,omega,alpha \link[base]{numeric} scalars or \link[base]{vector}s, 
-#' location, scale and slant parameters of skew-normal distribution
+#' @param xi \link[base]{numeric} scalar or \link[base]{vector}, 
+#' location parameter \eqn{\xi}
+#' 
+#' @param omega \link[base]{numeric} scalar or \link[base]{vector}, 
+#' scale parameter \eqn{\omega}
+#' 
+#' @param alpha \link[base]{numeric} scalar or \link[base]{vector}, 
+#' slant parameter \eqn{\alpha}
 #' 
 #' @returns
 #' Function [moment_sn] returns a \linkS4class{moment} object.
@@ -42,23 +48,29 @@ moment_sn_ <- function(alpha = 0) {
 #' @description
 #' Solve skew-normal parameters from mean, standard deviation and skewness.
 #' 
-#' @param mean \link[base]{numeric} scalar, mean, default value 0
+#' @param mean \link[base]{numeric} scalar, mean \eqn{\mu}, default value 0
 #' 
-#' @param sd \link[base]{numeric} scalar, standard deviation, default value 1
+#' @param sd \link[base]{numeric} scalar, standard deviation \eqn{\sigma}, default value 1
 #' 
 #' @param skewness \link[base]{numeric} scalar
 #' 
+#' @details
+#' Function [moment2sn] solves the 
+#' location \eqn{\xi}, scale \eqn{\omega} and slant \eqn{\alpha} parameters 
+#' of skew-normal distribution,
+#' from user-specified mean \eqn{\mu} (default 0), standard deviation \eqn{\sigma} (default 1) and 
+#' skewness.  
+#' 
 #' @returns
-#' Function [param_sn] returns a \link[base]{numeric} \link[base]{vector} of 
-#' \link[base]{length}-3, representing the 
-#' location \eqn{\xi}, scale \eqn{\omega} and slant \eqn{\alpha} parameters.
+#' Function [moment2sn] returns a \link[base]{length}-3 
+#' \link[base]{numeric} \link[base]{vector} \eqn{(\xi, \omega, \alpha)}.
 #' 
 #' @examples
-#' param_sn(skewness = .3)
+#' moment2sn(skewness = .3)
 #' 
 #' @importFrom stats optim
 #' @export
-param_sn <- function(mean = 0, sd = 1, skewness) {
+moment2sn <- function(mean = 0, sd = 1, skewness) {
   optim(par = c(xi = 0, omega = 1, alpha = 0), fn = function(x) {
     mm <- moment_sn_(alpha = x[3L])
     crossprod(c(mean_moment_(mm, location = x[1L], scale = x[2L]), sd_moment_(mm, scale = x[2L]), skewness_moment_(mm)) - c(mean, sd, skewness))

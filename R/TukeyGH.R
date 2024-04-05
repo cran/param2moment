@@ -7,9 +7,17 @@
 #' @description
 #' Moments of Tukey \eqn{g}-&-\eqn{h} distribution.
 #' 
-#' @param A,B,g,h \link[base]{numeric} scalars or \link[base]{vector}s,
-#' location, scale, skewness and elongation parameters of
-#' Tukey \eqn{g}-&-\eqn{h} distribution 
+#' @param A \link[base]{numeric} scalar or \link[base]{vector},
+#' location parameter \eqn{A}
+#' 
+#' @param B \link[base]{numeric} scalar or \link[base]{vector},
+#' scale parameter \eqn{B}
+#' 
+#' @param g \link[base]{numeric} scalar or \link[base]{vector},
+#' skewness parameter \eqn{g}
+#' 
+#' @param h \link[base]{numeric} scalar or \link[base]{vector},
+#' elongation parameter \eqn{h}
 #' 
 #' @returns
 #' Function [moment_GH] returns a \linkS4class{moment} object.
@@ -68,32 +76,32 @@ moment_GH_ <- function(g = 0, h = 0) {
 #' Solve Tukey \eqn{g}-, \eqn{h}- and \eqn{g}-&-\eqn{h} distribution parameters 
 #' from mean, standard deviation, skewness and kurtosis.
 #' 
-#' @param mean \link[base]{numeric} scalar, mean, default value 0
+#' @param mean \link[base]{numeric} scalar, mean \eqn{\mu}, default value 0
 #' 
-#' @param sd \link[base]{numeric} scalar, standard deviation, default value 1
+#' @param sd \link[base]{numeric} scalar, standard deviation \eqn{\sigma}, default value 1
 #' 
 #' @param skewness \link[base]{numeric} scalar
 #' 
 #' @param kurtosis \link[base]{numeric} scalar
 #' 
 #' @details
-#' Function [param_GH] solves the 
+#' Function [moment2GH] solves the 
 #' location \eqn{A}, scale \eqn{B}, skewness \eqn{g} 
 #' and elongation \eqn{h} parameters of Tukey \eqn{g}-&-\eqn{h} distribution,
-#' from user-specified mean \eqn{\mu}, standard deviation \eqn{\sigma}, 
+#' from user-specified mean \eqn{\mu} (default 0), standard deviation \eqn{\sigma} (default 1), 
 #' skewness and kurtosis.  
 #' 
 #' @returns
-#' Function [param_GH] returns a \link[base]{length}-4 
+#' Function [moment2GH] returns a \link[base]{length}-4 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(A, B, g, h)}.
 #' 
 #' @examples
-#' param_GH(skewness = .2, kurtosis = .3)
+#' moment2GH(skewness = .2, kurtosis = .3)
 #' 
-#' @name param_GH
+#' @name moment2GH
 #' @importFrom stats optim
 #' @export
-param_GH <- function(mean = 0, sd = 1, skewness, kurtosis) {
+moment2GH <- function(mean = 0, sd = 1, skewness, kurtosis) {
   optim(par = c(A = 0, B = 1, g = 0, h = 0), fn = function(x) {
     mm <- moment_GH_(g = x[3L], h = x[4L])
     crossprod(c(mean_moment_(mm, location = x[1L], scale = x[2L]), sd_moment_(mm, scale = x[2L]), skewness_moment_(mm), kurtosis_moment_(mm)) - c(mean, sd, skewness, kurtosis))
@@ -101,49 +109,49 @@ param_GH <- function(mean = 0, sd = 1, skewness, kurtosis) {
 }
 
 
-#' @rdname param_GH
+#' @rdname moment2GH
 #' 
 #' @details
-#' A education and demonstration function [param_GH_h] solves the 
-#' scale \eqn{B} and elongation \eqn{h} parameters of Tukey \eqn{h}-distribution,
-#' from user-specified standard deviation \eqn{\sigma} and kurtosis.
+#' An educational and demonstration function [moment2GH_h_demo] solves 
+#' \eqn{(B, h)} parameters of Tukey \eqn{h}-distribution,
+#' from user-specified \eqn{\sigma} and kurtosis.
 #' This is a non-skewed distribution, thus 
-#' the location parameter \eqn{A} is the mean \eqn{\mu}, and the skewness parameter \eqn{g=0}.
+#' the location parameter \eqn{A=\mu=0}, and the skewness parameter \eqn{g=0}.
 #' 
 #' @returns
-#' Function [param_GH_h] returns a \link[base]{length}-2 
+#' Function [moment2GH_h_demo] returns a \link[base]{length}-2 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(B, h)}.
 #' 
 #' @examples
-#' param_GH_h(kurtosis = .3)
+#' moment2GH_h_demo(kurtosis = .3)
 #' 
 #' @importFrom stats optim
 #' @export
-param_GH_h <- function(sd = 1, kurtosis) {
+moment2GH_h_demo <- function(sd = 1, kurtosis) {
   optim(par = c(B = 1, h = 0), fn = function(x) {
     mm <- moment_GH_(g = 0, h = x[2L])
     crossprod(c(sd_moment_(mm, scale = x[1L]), kurtosis_moment_(mm)) - c(sd, kurtosis))
   })$par
 }
 
-#' @rdname param_GH
+#' @rdname moment2GH
 #' 
 #' @details
-#' A education and demonstration function [param_GH_g] solves the 
-#' location \eqn{A}, scale \eqn{B} and skewness \eqn{g} parameters of Tukey \eqn{g}-distribution,
-#' from user-specified mean \eqn{\mu}, standard deviation \eqn{\sigma} and skewness.
+#' An educational and demonstration function [moment2GH_g_demo] solves  
+#' \eqn{(A, B, g)} parameters of Tukey \eqn{g}-distribution,
+#' from user-specified \eqn{\mu}, \eqn{\sigma} and skewness.
 #' For this distribution, the elongation parameter \eqn{h=0}.
 #' 
 #' @returns
-#' Function [param_GH_g] returns a \link[base]{length}-3 
+#' Function [moment2GH_g_demo] returns a \link[base]{length}-3 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(A, B, g)}.
 #' 
 #' @examples
-#' param_GH_g(skewness = .2)
+#' moment2GH_g_demo(skewness = .2)
 #' 
 #' @importFrom stats optim
 #' @export
-param_GH_g <- function(mean = 0, sd = 1, skewness) {
+moment2GH_g_demo <- function(mean = 0, sd = 1, skewness) {
   optim(par = c(A = 0, B = 1, g = 0), fn = function(x) {
     mm <- moment_GH_(g = x[3L], h = 0)
     crossprod(c(mean_moment_(mm, location = x[1L], scale = x[2L]), sd_moment_(mm, scale = x[2L]), skewness_moment_(mm)) - c(mean, sd, skewness))

@@ -129,7 +129,7 @@ kurtosis_moment <- function(x) x@standardized4 - 3
 #' @description
 #' Print S4 object \linkS4class{moment} in a pretty manner.
 #' 
-#' @param object \linkS4class{moment}
+#' @param object a \linkS4class{moment} object
 #' 
 #' @returns 
 #' The \link[methods]{show} method for \linkS4class{moment} object 
