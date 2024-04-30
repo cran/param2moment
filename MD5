@@ -1,4 +1,4 @@
-c233431a27530e9aa712a6023bfb33e5 *DESCRIPTION
+21e305d38d0a977134b9f312cab66854 *DESCRIPTION
 76865d8478391e469ba5746b7c4a979e *NAMESPACE
 9ab4a53a88191f4add81fe804cf747db *R/TukeyGH.R
 19b0258a4dcda1d53e1e24cee77d83a1 *R/moment.R
@@ -6,7 +6,7 @@ bcfcc9878652a075aefeea5db81c4099 *R/moment2param.R
 b76ec713b4f2099ee066d692169cf896 *R/norm.R
 71e70655decfe5ec57cff49a16e7d431 *R/sn.R
 2eb9c752b2ccb904f133da202b030fdc *R/st.R
-20c8d3f97d93e2e318a22508275b5a02 *build/partial.rdb
+f61db891eb928123aba4412ca322f508 *build/partial.rdb
 7702ddeb343327a27929b79139f9afb5 *man/moment-class.Rd
 b71a76c456a5356a8c83c4aa5468daf9 *man/moment2GH.Rd
 51a8e6193d2da42a0b1bdf588d5cfa9c *man/moment2param.Rd
