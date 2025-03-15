@@ -22,7 +22,7 @@ some or all of \code{mean}, \code{sd}, \code{skewness} and \code{kurtosis}
 (length will be recycled).}
 }
 \value{
-Function \link{moment2param} returns a \link[base]{list} of \link[base]{numeric} \link[base]{vector}s.
+Function \code{\link[=moment2param]{moment2param()}} returns a \link[base]{list} of \link[base]{numeric} \link[base]{vector}s.
 }
 \description{
 Converts multiple sets of moments to multiple sets of distribution parameters.

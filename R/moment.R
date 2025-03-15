@@ -135,6 +135,7 @@ kurtosis_moment <- function(x) x@standardized4 - 3
 #' The \link[methods]{show} method for \linkS4class{moment} object 
 #' does not have a returned value.
 #' 
+#' @keywords internal
 #' @importFrom methods show signature
 #' @export
 setMethod(f = show, signature = signature(object = 'moment'), definition = function(object) {

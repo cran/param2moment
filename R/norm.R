@@ -13,7 +13,7 @@
 #' standard deviation \eqn{\sigma}
 #' 
 #' @returns
-#' Function [moment_norm] returns a \linkS4class{moment} object.
+#' Function [moment_norm()] returns a \linkS4class{moment} object.
 #' 
 #' @examples
 #' moment_norm(mean = 1.2, sd = .7)

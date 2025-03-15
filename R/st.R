@@ -19,7 +19,7 @@
 #' degree of freedom \eqn{\nu}
 #' 
 #' @returns
-#' Function [moment_st] returns a \linkS4class{moment} object.
+#' Function [moment_st()] returns a \linkS4class{moment} object.
 #' 
 #' @references
 #' Raw moments of skew-\eqn{t}: \url{https://arxiv.org/abs/0911.2342}
@@ -70,14 +70,14 @@ moment_st_ <- function(alpha = 0, nu = Inf) { # xi = 0, omega = 1,
 #' @param kurtosis \link[base]{numeric} scalar
 #' 
 #' @details
-#' Function [moment2st] solves the 
+#' Function [moment2st()] solves the 
 #' location \eqn{\xi}, scale \eqn{\omega}, slant \eqn{\alpha} 
 #' and degree of freedom \eqn{\nu} parameters of skew-\eqn{t} distribution,
 #' from user-specified mean \eqn{\mu} (default 0), standard deviation \eqn{\sigma} (default 1), 
 #' skewness and kurtosis.  
 #' 
 #' @returns
-#' Function [moment2st] returns a \link[base]{length}-4 \link[base]{numeric} \link[base]{vector} 
+#' Function [moment2st()] returns a \link[base]{length}-4 \link[base]{numeric} \link[base]{vector} 
 #' \eqn{(\xi, \omega, \alpha, \nu)}.
 #' 
 #' @examples
@@ -107,7 +107,7 @@ moment2st <- function(mean = 0, sd = 1, skewness, kurtosis) {
 #' the location parameter \eqn{\xi=\mu=0}, and the slant parameter \eqn{\alpha=0}.
 #' 
 #' @returns
-#' Function [moment2t_demo] returns a \link[base]{length}-2 
+#' Function [moment2t_demo()] returns a \link[base]{length}-2 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(\omega, \nu)}.
 #' 
 #' @examples

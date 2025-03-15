@@ -16,3 +16,4 @@ does not have a returned value.
 \description{
 Print S4 object \linkS4class{moment} in a pretty manner.
 }
+\keyword{internal}

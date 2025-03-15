@@ -19,7 +19,7 @@
 #' (length will be recycled).
 #' 
 #' @returns
-#' Function [moment2param] returns a \link[base]{list} of \link[base]{numeric} \link[base]{vector}s.
+#' Function [moment2param()] returns a \link[base]{list} of \link[base]{numeric} \link[base]{vector}s.
 #' 
 #' @examples
 #' skw = c(.2, .5, .8)

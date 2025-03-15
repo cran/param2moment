@@ -20,7 +20,7 @@ slant parameter \eqn{\alpha}}
 degree of freedom \eqn{\nu}}
 }
 \value{
-Function \link{moment_st} returns a \linkS4class{moment} object.
+Function \code{\link[=moment_st]{moment_st()}} returns a \linkS4class{moment} object.
 }
 \description{
 Moments of skew-\eqn{t} distribution, parameter nomenclature follows

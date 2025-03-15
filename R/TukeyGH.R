@@ -20,7 +20,7 @@
 #' elongation parameter \eqn{h}
 #' 
 #' @returns
-#' Function [moment_GH] returns a \linkS4class{moment} object.
+#' Function [moment_GH()] returns a \linkS4class{moment} object.
 #' 
 #' @references 
 #' Raw moments of Tukey \eqn{g}-&-\eqn{h} distribution: \doi{10.1002/9781118150702.ch11}
@@ -85,14 +85,14 @@ moment_GH_ <- function(g = 0, h = 0) {
 #' @param kurtosis \link[base]{numeric} scalar
 #' 
 #' @details
-#' Function [moment2GH] solves the 
+#' Function [moment2GH()] solves the 
 #' location \eqn{A}, scale \eqn{B}, skewness \eqn{g} 
 #' and elongation \eqn{h} parameters of Tukey \eqn{g}-&-\eqn{h} distribution,
 #' from user-specified mean \eqn{\mu} (default 0), standard deviation \eqn{\sigma} (default 1), 
 #' skewness and kurtosis.  
 #' 
 #' @returns
-#' Function [moment2GH] returns a \link[base]{length}-4 
+#' Function [moment2GH()] returns a \link[base]{length}-4 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(A, B, g, h)}.
 #' 
 #' @examples
@@ -112,14 +112,14 @@ moment2GH <- function(mean = 0, sd = 1, skewness, kurtosis) {
 #' @rdname moment2GH
 #' 
 #' @details
-#' An educational and demonstration function [moment2GH_h_demo] solves 
+#' An educational and demonstration function [moment2GH_h_demo()] solves 
 #' \eqn{(B, h)} parameters of Tukey \eqn{h}-distribution,
 #' from user-specified \eqn{\sigma} and kurtosis.
 #' This is a non-skewed distribution, thus 
 #' the location parameter \eqn{A=\mu=0}, and the skewness parameter \eqn{g=0}.
 #' 
 #' @returns
-#' Function [moment2GH_h_demo] returns a \link[base]{length}-2 
+#' Function [moment2GH_h_demo()] returns a \link[base]{length}-2 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(B, h)}.
 #' 
 #' @examples
@@ -137,13 +137,13 @@ moment2GH_h_demo <- function(sd = 1, kurtosis) {
 #' @rdname moment2GH
 #' 
 #' @details
-#' An educational and demonstration function [moment2GH_g_demo] solves  
+#' An educational and demonstration function [moment2GH_g_demo()] solves  
 #' \eqn{(A, B, g)} parameters of Tukey \eqn{g}-distribution,
 #' from user-specified \eqn{\mu}, \eqn{\sigma} and skewness.
 #' For this distribution, the elongation parameter \eqn{h=0}.
 #' 
 #' @returns
-#' Function [moment2GH_g_demo] returns a \link[base]{length}-3 
+#' Function [moment2GH_g_demo()] returns a \link[base]{length}-3 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(A, B, g)}.
 #' 
 #' @examples

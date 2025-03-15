@@ -14,7 +14,7 @@ mean parameter \eqn{\mu}}
 standard deviation \eqn{\sigma}}
 }
 \value{
-Function \link{moment_norm} returns a \linkS4class{moment} object.
+Function \code{\link[=moment_norm]{moment_norm()}} returns a \linkS4class{moment} object.
 }
 \description{
 Moments of \href{https://en.wikipedia.org/wiki/Normal_distribution}{normal distribution}, parameter nomenclature follows

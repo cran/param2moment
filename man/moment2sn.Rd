@@ -14,14 +14,14 @@ moment2sn(mean = 0, sd = 1, skewness)
 \item{skewness}{\link[base]{numeric} scalar}
 }
 \value{
-Function \link{moment2sn} returns a \link[base]{length}-3
+Function \code{\link[=moment2sn]{moment2sn()}} returns a \link[base]{length}-3
 \link[base]{numeric} \link[base]{vector} \eqn{(\xi, \omega, \alpha)}.
 }
 \description{
 Solve skew-normal parameters from mean, standard deviation and skewness.
 }
 \details{
-Function \link{moment2sn} solves the
+Function \code{\link[=moment2sn]{moment2sn()}} solves the
 location \eqn{\xi}, scale \eqn{\omega} and slant \eqn{\alpha} parameters
 of skew-normal distribution,
 from user-specified mean \eqn{\mu} (default 0), standard deviation \eqn{\sigma} (default 1) and

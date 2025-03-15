@@ -20,7 +20,7 @@ skewness parameter \eqn{g}}
 elongation parameter \eqn{h}}
 }
 \value{
-Function \link{moment_GH} returns a \linkS4class{moment} object.
+Function \code{\link[=moment_GH]{moment_GH()}} returns a \linkS4class{moment} object.
 }
 \description{
 Moments of Tukey \eqn{g}-&-\eqn{h} distribution.

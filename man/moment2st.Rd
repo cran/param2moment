@@ -19,17 +19,17 @@ moment2t_demo(sd = 1, kurtosis)
 \item{kurtosis}{\link[base]{numeric} scalar}
 }
 \value{
-Function \link{moment2st} returns a \link[base]{length}-4 \link[base]{numeric} \link[base]{vector}
+Function \code{\link[=moment2st]{moment2st()}} returns a \link[base]{length}-4 \link[base]{numeric} \link[base]{vector}
 \eqn{(\xi, \omega, \alpha, \nu)}.
 
-Function \link{moment2t_demo} returns a \link[base]{length}-2
+Function \code{\link[=moment2t_demo]{moment2t_demo()}} returns a \link[base]{length}-2
 \link[base]{numeric} \link[base]{vector} \eqn{(\omega, \nu)}.
 }
 \description{
 Solve skew-\eqn{t} parameters from mean, standard deviation, skewness and kurtosis.
 }
 \details{
-Function \link{moment2st} solves the
+Function \code{\link[=moment2st]{moment2st()}} solves the
 location \eqn{\xi}, scale \eqn{\omega}, slant \eqn{\alpha}
 and degree of freedom \eqn{\nu} parameters of skew-\eqn{t} distribution,
 from user-specified mean \eqn{\mu} (default 0), standard deviation \eqn{\sigma} (default 1),

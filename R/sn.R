@@ -16,7 +16,7 @@
 #' slant parameter \eqn{\alpha}
 #' 
 #' @returns
-#' Function [moment_sn] returns a \linkS4class{moment} object.
+#' Function [moment_sn()] returns a \linkS4class{moment} object.
 #' 
 #' @examples
 #' xi = 2; omega = 1.3; alpha = 3
@@ -55,14 +55,14 @@ moment_sn_ <- function(alpha = 0) {
 #' @param skewness \link[base]{numeric} scalar
 #' 
 #' @details
-#' Function [moment2sn] solves the 
+#' Function [moment2sn()] solves the 
 #' location \eqn{\xi}, scale \eqn{\omega} and slant \eqn{\alpha} parameters 
 #' of skew-normal distribution,
 #' from user-specified mean \eqn{\mu} (default 0), standard deviation \eqn{\sigma} (default 1) and 
 #' skewness.  
 #' 
 #' @returns
-#' Function [moment2sn] returns a \link[base]{length}-3 
+#' Function [moment2sn()] returns a \link[base]{length}-3 
 #' \link[base]{numeric} \link[base]{vector} \eqn{(\xi, \omega, \alpha)}.
 #' 
 #' @examples

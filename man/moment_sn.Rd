@@ -17,7 +17,7 @@ scale parameter \eqn{\omega}}
 slant parameter \eqn{\alpha}}
 }
 \value{
-Function \link{moment_sn} returns a \linkS4class{moment} object.
+Function \code{\link[=moment_sn]{moment_sn()}} returns a \linkS4class{moment} object.
 }
 \description{
 Moments of \href{https://en.wikipedia.org/wiki/Skew_normal_distribution}{skew-normal distribution}, parameter nomenclature follows
